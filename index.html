@@ -37,6 +37,9 @@ Yup, ascii art !
 		<script src="js/skel-panels.min.js"></script>
 		<script src="js/init.js"></script>
 		<script src="js/jquery.bxslider.js"></script>
+
+		<script src="js/verify.notify.min.js"></script>
+
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -288,16 +291,17 @@ Yup, ascii art !
 							<input type='hidden' name='subject' value='Message sent from mmnaviwala.com' />
 							<input type='hidden' name='redirect_to' value='http://mmnaviwala.com/' />
 								<div class="row half">
-									<div class="6u"><input type="text" class="text" name="name" placeholder="Name" /></div>
-									<div class="6u"><input type="text" class="text" name="email" placeholder="Email" /></div>
+									<div class="6u"><input type="text" class="text" name="name" placeholder="Name" data-validate="required" /></div>
+									<div class="6u"><input type="text" class="text" name="email" placeholder="Email" data-validate="required,email" /></div>
 								</div>
 								<div class="row half">
 									<div class="12u">
-										<textarea name="message" placeholder="Message"></textarea>
+										<textarea name="message" placeholder="Message" data-validate="required"></textarea>
 									</div>
 								</div>
 								<div class="row">
 									<div class="12u">
+										<!-- onclick="thankyouPopUp()" -->
 										<a href="#" class="button submit">Send Message</a>
 									</div>
 								</div>
@@ -345,6 +349,14 @@ Yup, ascii art !
 
 				});
 			</script>
+
+			<script>
+			function thankyouPopUp()
+				{
+					alert("Thank you for for contacting me.\nI'll reply as soon as possible");
+				}
+			</script>
+
 
 			<!-- Google Analytics -->
 			<script>
